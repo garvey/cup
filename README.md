@@ -11,3 +11,6 @@ Install
 Start server
 
 - npm start
+
+Username - max@mail.com
+password - password
