@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1;
+}
+
+.sidebar-container {
+  background: #afc2b5;
+  height: 100%;
+  position: fixed;
+}
+.sidebar {
+  height: 100%;
+  position: fixed;
+}
+
+.website .container {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.welcome,
+.how-it-works {
+  min-height: 100vh;
+}
+
+.welcome .col {
+  min-height: 100vh;
+}
+
+.how-it-works {
+  text-align: center;
+}
+.how-it-works img {
+  max-height: 200px;
+  margin: 0 auto;
+  display: block;
+  padding: 20px;
+}
+
+.create-competition {
+  background: #c8c5b8;
+}
+.invite {
+  background: #d3d6d9;
+}
+
+.predict-fixtures {
+  background: #ebf4ed;
+}
+
+.celebrate {
+  background: #e5e4d2;
+}
