@@ -13,9 +13,9 @@ import FixtureDetails from '../fixtures/FixtureDetails';
 class TournamentDetails extends Component {
   handleSubmit = e => {
     e.preventDefault();
-    //console.log(this.state);
     const id = this.props.match.params.id;
     this.props.addMember(id);
+    this.props.history.push('/payment');
   };
 
   render() {
@@ -42,11 +42,11 @@ class TournamentDetails extends Component {
         var pot_total = 0;
       }
 
-      // if (tournament.member) {
-      //   var fixture_list = <FixtureDetails tournament={tournament} />;
-      // } else {
-      //   var fixture_list = <div>No members!</div>;
-      // }
+      if (tournament.member) {
+        var fixture_list = <FixtureDetails tournament={tournament} />;
+      } else {
+        var fixture_list = <div>No members!</div>;
+      }
     } else {
       console.log('NOT LOADED YET');
     }
@@ -68,7 +68,7 @@ class TournamentDetails extends Component {
               <p>list of members - {tournament.member}</p>
               {buttonText}
 
-              {/* {fixture_list} */}
+              {fixture_list}
             </div>
             <div className="card-action grey lighten-4 grey-text">
               <div>

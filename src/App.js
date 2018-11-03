@@ -10,6 +10,7 @@ import TournamentDetails from './components/tournaments/TournamentDetails';
 import ProfileDetails from './components/profile/ProfileDetails';
 import FixtureDetails from './components/fixtures/FixtureDetails';
 import Website from './components/website/Website';
+import Payment from './components/payment/PaymentDetails';
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
             <Route path="/tournament/:id" component={TournamentDetails} />
             <Route path="/profile" component={ProfileDetails} />
             <Route path="/tournament/:id/fixtures" component={FixtureDetails} />
+            <Route path="/payment" component={Payment} />
           </Switch>
         </div>
       </BrowserRouter>

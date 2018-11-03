@@ -26,23 +26,25 @@ export const createTournament = tournament => {
 };
 
 export const addMember = id => {
-  return (dispatch, getState, { getFirebase, getFirestore }) => {
+  return (dispatch, getState, { getFirestore }) => {
     const email = getState().firebase.auth.email;
     const firestore = getFirestore();
-    const firebase = getState().firebase;
-    const state = getState();
-    //const rootRef = firestone.database().ref();
-    console.log('FIRESTORE', firestore);
-    console.log('FIREBASE', firebase);
-    console.log('state', state);
-    // tournaments: state.firestore.ordered.tournaments,
-    console.log('ID', id);
 
     firestore
       .collection('tournaments')
       .doc(id)
       .update({
         member: firestore.FieldValue.arrayUnion(email)
+      })
+      .then(() => {
+        dispatch({
+          type: 'ADD_MEMBER'
+        });
+        console.log('MEMBER ADDED');
+      })
+      .catch(err => {
+        dispatch({ type: 'ADD_MEMBER_ERROR', err });
+        console.log('MEMBER NOT ADDED');
       });
   };
 };

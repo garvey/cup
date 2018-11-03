@@ -17,16 +17,9 @@ class Dashboard extends Component {
       <div>
         <div className="dashboard">
           <div className="row">
-            {/* <div className="col m3 sidebar-container">
-            <div className="sidebar">sidebar content</div>
-          </div> */}
             <div className="col m12">
               <TournamentList tournaments={tournaments} />
             </div>
-
-            {/* <div className="col s12 m5 offset-m1">
-            <Notifications />
-          </div> */}
           </div>
         </div>
         <Footer />
